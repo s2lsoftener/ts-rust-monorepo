@@ -1,0 +1,14 @@
+{
+    "recommendations": [
+        "bierner.github-markdown-preview",
+        "ms-azuretools.vscode-docker",
+        "serayuzgur.crates",
+        "ms-vscode-remote.remote-containers",
+        "dbaeumer.vscode-eslint",
+        "redhat.vscode-yaml",
+        "rust-lang.rust-analyzer",
+        "esbenp.prettier-vscode",
+        "tamasfe.even-better-toml",
+        "github.vscode-github-actions"
+    ]
+}

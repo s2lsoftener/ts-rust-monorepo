@@ -3,21 +3,36 @@
 Monorepo template for TypeScript + Rust packages and services.
 
 ## Features
-- [ ] Containerized local development using Docker [Compose Watch](https://docs.docker.com/compose/file-watch/)
-- [ ] [pnpm](https://pnpm.io/) for managing JS dependencies
-- [ ] [Cargo Workspace](https://doc.rust-lang.org/cargo/reference/workspaces.html) for Rust projects
+
+- [x] Containerized local development using Docker
+- [x] [pnpm](https://pnpm.io/) for managing JS dependencies
+- [x] [Cargo Workspace](https://doc.rust-lang.org/cargo/reference/workspaces.html) for Rust projects
 - [ ] [Nx](https://nx.dev/) for running and caching tasks under a cross-language dependency graph.
 - [ ] Auto-generated OpenAPI (swagger) docs and shared type libs for TypeScript and Rust services
-
+- [ ] Version and release management using [changesets](https://github.com/changesets/changesets)
 
 ## Quick Start
 
+Initialize .env files:
+
 ```sh
-docker compose up -d 
+./dev/init-env.sh
+```
+
+To enable local development:
+
+```sh
+pnpm install
+```
+
+To start the services locally:
+
+```sh
+docker compose up -d --build
 docker compose logs -f
 ```
 
-This will build and start services according to this project graph.
+Services will build and start according to this project graph.
 
 ```mermaid
 flowchart LR

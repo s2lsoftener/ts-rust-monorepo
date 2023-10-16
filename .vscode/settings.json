@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "terminal.integrated.profiles.osx": {
+    "dev": {
+      "path": "zsh",
+      "args": [
+        "-c",
+        "docker compose up -d dev && docker compose exec dev bash"
+      ],
+      "overrideName": true,
+      "color": "terminal.ansiCyan",
+    }
+  },
+}

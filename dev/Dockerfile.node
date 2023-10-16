@@ -1,0 +1,19 @@
+ARG NODE_VERSION
+
+FROM node:${NODE_VERSION}
+
+ARG LOCAL_WORKDIR
+WORKDIR ${LOCAL_WORKDIR}
+
+RUN npm install -g pnpm@8
+# USER node
+
+COPY .npmrc pnpm-lock.yaml .pnpmfile.cjs ./
+
+# If you patched any package, include patches before install too
+# COPY patches patches
+
+RUN pnpm fetch
+
+ADD . ./
+RUN pnpm install -r --offline

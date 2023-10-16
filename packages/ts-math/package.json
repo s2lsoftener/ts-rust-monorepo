@@ -1,0 +1,32 @@
+{
+  "name": "@my-org/ts-math",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "format": "prettier --write ./src",
+    "format-check": "prettier --check ./src",
+    "lint-fix": "eslint --fix src",
+    "lint": "eslint src",
+    "unit-test": "node --inspect ./node_modules/jest/bin/jest.js --config=./jest.unit.config.js",
+    "int-test": "node --inspect=0.0.0.0:9229 ./node_modules/jest/bin/jest.js --config=./jest.int.config.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "jest": "^29.7.0",
+    "prettier": "3.0.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@my-org/ts-add": "workspace:^",
+    "@my-org/ts-subtract": "workspace:^"
+  }
+}
