@@ -11,4 +11,17 @@
       "color": "terminal.ansiCyan",
     }
   },
+  "files.associations": {
+    "docker-compose.dev.yml": "dockercompose"
+  },
+  "vsicons.associations.files": [
+    {
+      "icon": "docker",
+      "extensions": [
+        "docker-compose.dev.yml"
+      ],
+      "filename": true,
+      "format": "svg"
+    }
+  ]
 }
