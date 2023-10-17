@@ -10,7 +10,7 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build-js:
+  js-build:
     name: Build JS
     runs-on: ubuntu-latest
     steps:
@@ -31,10 +31,10 @@ jobs:
             services/*/dist
           key: tsc-${{ github.run_id }}-${{ github.run_attempt }}
 
-  unit-test-js:
-    name: Unit Tests (JS)
+  js-unit-test:
+    name: (JS) Unit Tests
     runs-on: ubuntu-latest
-    needs: build-js
+    needs: js-build
     steps:
       - uses: actions/checkout@v3
       - uses: pnpm/action-setup@v2
@@ -53,8 +53,31 @@ jobs:
           key: tsc-${{ github.run_id }}-${{ github.run_attempt }}
       - run: pnpm run -r unit-test
 
-  integration-test-js:
-    name: Integration Tests (JS)
+  js-lint:
+    name: (JS) Format & Lint
+    runs-on: ubuntu-latest
+    needs: js-build
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: pnpm
+      - run: pnpm install
+      - uses: actions/cache/restore@v3
+        with:
+          path: |
+            packages/*/dist
+            services/*/dist
+          key: tsc-${{ github.run_id }}-${{ github.run_attempt }}
+      - run: pnpm -r exec prettier ./src --check
+      - run: pnpm -r exec eslint ./src
+
+  js-integration-test:
+    name: (JS) Integration Tests
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
