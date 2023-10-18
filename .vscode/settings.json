@@ -18,7 +18,8 @@
     {
       "icon": "docker",
       "extensions": [
-        "docker-compose.dev.yml"
+        "docker-compose.dev.yml",
+        "docker-compose.ci.yml"
       ],
       "filename": true,
       "format": "svg"
