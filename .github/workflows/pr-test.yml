@@ -129,6 +129,17 @@ jobs:
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
+      - uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./dev/Dockerfile.node
+          tags: s2l-node:latest
+          cache-from: type=local,src=/tmp/.buildx-cache
+          cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
+          build-args: |
+            NODE_VERSION=18.17.0
+            LOCAL_WORKDIR=/app
+          load: true
       - run: ./dev/init-env.sh
       - run: |
           docker compose -f docker-compose.yml -f docker-compose.ci.yml run --rm ${{ matrix.package }} /bin/bash -c "pnpm --filter @my-org/${{ matrix.package }} int-test"
