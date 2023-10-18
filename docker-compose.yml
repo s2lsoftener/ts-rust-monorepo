@@ -30,6 +30,17 @@ services:
     env_file:
       - ./services/ts-fastify-api/.env
 
+  ts-random-word-api:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile.node
+      args:
+        - NODE_VERSION=18.17.0
+        - LOCAL_WORKDIR=${PWD}
+    command: pnpm --filter "@my-org/ts-random-word-api" dev
+    env_file:
+      - ./services/ts-random-word-api/.env
+
   rust-axum-api:
     build:
       context: .
