@@ -96,7 +96,6 @@ jobs:
         with:
           context: .
           file: ./dev/Dockerfile.node
-          push: true
           tags: s2l-node:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new,mode=max
