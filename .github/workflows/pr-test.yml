@@ -86,14 +86,15 @@ jobs:
       # https://www.hyperdx.io/blog/docker-buildx-cache-with-github-actions
       # https://github.com/docker/bake-action/issues/36
       # https://github.com/docker/bake-action
-      - uses: docker/bake-action@v4
-        with:
-          files: |
-            ./docker-compose.yml
-          load: true
-          set: |
-            *.cache-from="type=gha"
-            *.cache-to="type=gha"
+      # - uses: docker/bake-action@v4
+      #   with:
+      #     files: |
+      #       ./docker-compose.yml
+      #     load: true
+      #     set: |
+      #       *.cache-from="type=gha"
+      #       *.cache-to="type=gha"
+      - run: docker buildx bake -f ./docker-compose.yml --set *.cache-to="type=gha,mode=max" --set *.cache-from="type=gha" --load
 
       # # https://docs.docker.com/build/ci/github-actions/cache/#local-cache
       # - name: Cache Docker Layers
