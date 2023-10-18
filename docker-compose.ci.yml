@@ -1,0 +1,8 @@
+version: "3"
+services:
+  ts-fastify-api:
+    build:
+      cache_to:
+        - type=gha,mode=max
+      cache_from:
+        - type=gha
