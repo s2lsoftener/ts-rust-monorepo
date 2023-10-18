@@ -93,7 +93,7 @@ jobs:
           load: true
           set: |
             *.cache-from="type=gha"
-            *.cache-to="type=gha,mode=max"
+            *.cache-to="type=gha"
 
       # # https://docs.docker.com/build/ci/github-actions/cache/#local-cache
       # - name: Cache Docker Layers
