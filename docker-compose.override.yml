@@ -1,6 +1,9 @@
 version: "3"
 services:
   ts-fastify-api:
+    build:
+      args:
+        - LOCAL_WORKDIR=${PWD}
     volumes:
       - .:/${PWD}
       - node_modules:/${PWD}/node_modules
