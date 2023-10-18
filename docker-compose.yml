@@ -39,18 +39,18 @@ services:
     env_file:
       - ./services/ts-random-word-api/.env
 
-  rust-axum-api:
-    build:
-      context: .
-      dockerfile: ./dev/Dockerfile.rust
-      args:
-        - RUST_VERSION=1.71.0
-    volumes:
-      - .:/app
-      - cargo_target:/app/target
-    command: cargo watch -x 'run -p rust-axum-api'
-    ports:
-      - 33001:3000
+  # rust-axum-api:
+  #   build:
+  #     context: .
+  #     dockerfile: ./dev/Dockerfile.rust
+  #     args:
+  #       - RUST_VERSION=1.71.0
+  #   volumes:
+  #     - .:/app
+  #     - cargo_target:/app/target
+  #   command: cargo watch -x 'run -p rust-axum-api'
+  #   ports:
+  #     - 33001:3000
 
 volumes:
   node_modules:
