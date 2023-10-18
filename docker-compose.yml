@@ -10,14 +10,13 @@ services:
   #       - NODE_VERSION=18.17.0
   #       - LOCAL_WORKDIR=/app
   #   tty: true
-  # rust-dev:
-  #   build:
-  #     context: .
-  #     dockerfile: ./dev/Dockerfile.rust
-  #     args:
-  #       - RUST_VERSION=1.71.0
-  #       - LOCAL_WORKDIR=/app
-  #   tty: true
+  rust-dev:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile.rust
+      args:
+        - RUST_VERSION=1.71.0
+    tty: true
 
   ts-fastify-api:
     build:
