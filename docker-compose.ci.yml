@@ -1,0 +1,5 @@
+version: "3"
+services:
+  ts-fastify-api:
+    build: !reset null
+    image: s2l-node:latest
