@@ -136,8 +136,8 @@ jobs:
             ./docker-compose.yml
           load: true
           set: |
-            *.cache-from="type=gha"
-            *.cache-to="type=gha,mode=max"
+            *.cache-from=type=gha
+            *.cache-to=type=gha,mode=max
       - run: ./dev/init-env.sh
       - run: |
           docker compose -f docker-compose.yml run --rm ${{ matrix.package }} /bin/bash -c "pnpm --filter @my-org/${{ matrix.package }} int-test"
