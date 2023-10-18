@@ -2,14 +2,14 @@
 
 version: "3"
 services:
-  # node-dev:
-  #   build:
-  #     context: .
-  #     dockerfile: ./dev/Dockerfile.node
-  #     args:
-  #       - NODE_VERSION=18.17.0
-  #       - LOCAL_WORKDIR=/app
-  #   tty: true
+  node-dev:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile.node
+      args:
+        - NODE_VERSION=18.17.0
+        - LOCAL_WORKDIR=/app
+    tty: true
   rust-dev:
     build:
       context: .
@@ -28,28 +28,28 @@ services:
     env_file:
       - ./services/ts-fastify-api/.env
 
-  # ts-random-word-api:
-  #   build:
-  #     context: .
-  #     dockerfile: ./dev/Dockerfile.node
-  #     args:
-  #       - NODE_VERSION=18.17.0
-  #   command: pnpm --filter "@my-org/ts-random-word-api" dev
-  #   env_file:
-  #     - ./services/ts-random-word-api/.env
+  ts-random-word-api:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile.node
+      args:
+        - NODE_VERSION=18.17.0
+    command: pnpm --filter "@my-org/ts-random-word-api" dev
+    env_file:
+      - ./services/ts-random-word-api/.env
 
-  # rust-axum-api:
-  #   build:
-  #     context: .
-  #     dockerfile: ./dev/Dockerfile.rust
-  #     args:
-  #       - RUST_VERSION=1.71.0
-  #   volumes:
-  #     - .:/app
-  #     - cargo_target:/app/target
-  #   command: cargo watch -x 'run -p rust-axum-api'
-  #   ports:
-  #     - 33001:3000
+  rust-axum-api:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile.rust
+      args:
+        - RUST_VERSION=1.71.0
+    volumes:
+      - .:/app
+      - cargo_target:/app/target
+    command: cargo watch -x 'run -p rust-axum-api'
+    ports:
+      - 33001:3000
 
 volumes:
   node_modules:
