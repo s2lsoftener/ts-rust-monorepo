@@ -60,6 +60,7 @@ jobs:
   deploy-production:
     name: Deploy to Production
     needs: [publish, deploy-develop]
+    environment: production
     runs-on: ubuntu-latest
     steps:
       - run: echo Pretend to publish to production ${{ needs.publish.outputs.publishedPackages }}
