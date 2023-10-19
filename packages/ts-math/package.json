@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "private": true,
   "scripts": {
     "format": "prettier --write ./src",
     "format-check": "prettier --check ./src",
     "lint-fix": "eslint --fix src",
     "lint": "eslint src",
     "unit-test": "node --inspect ./node_modules/jest/bin/jest.js --config=./jest.unit.config.js",
-    "int-test": "node --inspect=0.0.0.0:9229 ./node_modules/jest/bin/jest.js --config=./jest.int.config.js"
+    "int-test": "node --inspect=0.0.0.0:9229 ./node_modules/jest/bin/jest.js --config=./jest.int.config.js",
+    "release": "echo release ts-math"
   },
   "keywords": [],
   "author": "",

@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
+  "private": true,
   "scripts": {
     "int-test": "tsc --build && node --inspect=0.0.0.0:9230 --require ts-node/register ./node_modules/jest/bin/jest.js --config=./jest.int.config.js",
     "int-test-watch": "./scripts/int-test-watch.sh",
     "docker-int-test": "pnpm -w docker-compose run --rm --build --service-ports ts-random-word-api bash -c \"pnpm --filter @my-org/ts-random-word-api run int-test\"",
     "docker-int-test-watch": "./scripts/docker-run.sh int-test-watch",
-    "dev": "nodemon -d 1 -L --watch \"./src/**/*\" --watch \"node_modules/@my-org\" -e ts --exec \"node --inspect=0.0.0.0:9229 --require ts-node/register src/index.ts\""
+    "dev": "nodemon -d 1 -L --watch \"./src/**/*\" --watch \"node_modules/@my-org\" -e ts --exec \"node --inspect=0.0.0.0:9229 --require ts-node/register src/index.ts\"",
+    "release": "echo release ts-random-word-api"
   },
   "keywords": [],
   "author": "",
