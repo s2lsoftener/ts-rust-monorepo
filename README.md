@@ -11,6 +11,16 @@ Monorepo template for TypeScript + Rust packages and services.
 - [ ] Auto-generated OpenAPI (swagger) docs and shared type libs for TypeScript and Rust services
 - [ ] Version and release management using [changesets](https://github.com/changesets/changesets)
 
+## NPM Registry
+
+Everything in this repo is listed under my own GitHub registry @s2lsoftener. You should replace that with your own in all the files.
+
+To login to the registry in your CLI, use 
+
+```sh
+pnpm login --scope=@NAMESPACE --auth-type=legacy --registry=https://npm.pkg.github.com
+```
+
 ## Quick Start
 
 Initialize .env files:
