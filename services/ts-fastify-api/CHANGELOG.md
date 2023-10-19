@@ -1,5 +1,11 @@
 # @my-org/ts-fastify-api
 
+## 1.0.3
+
+### Patch Changes
+
+- @s2lsoftener/ts-math@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

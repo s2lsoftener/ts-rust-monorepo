@@ -1,5 +1,11 @@
 # @my-org/ts-add
 
+## 3.0.0
+
+### Major Changes
+
+- 1d6258f: major add
+
 ## 2.0.0
 
 ### Major Changes
