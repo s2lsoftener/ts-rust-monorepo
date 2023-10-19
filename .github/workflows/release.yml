@@ -44,8 +44,10 @@ jobs:
     needs: publish
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ needs.publish.outputs.publishedPackages }}
-      - run: echo ${{ needs.publish.outputs.published }}
+      - env:
+          PUBLISHED: ${{ needs.publish.outputs.published }}
+          PUBLISHED_PACKAGES: ${{ needs.publish.outputs.publishedPackages }}
+        run: echo $PUBLISHED $PUBLISHED_PACKAGES
 
   deploy-develop:
     name: Deploy to Develop
