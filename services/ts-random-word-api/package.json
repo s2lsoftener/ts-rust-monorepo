@@ -1,6 +1,6 @@
 {
   "name": "@s2lsoftener/ts-random-word-api",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
