@@ -21,6 +21,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+          registry-url: https://npm.pkg.github.com
           cache: pnpm
       - run: pnpm install
       - run: pnpm -r exec tsc
@@ -43,6 +44,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+          registry-url: https://npm.pkg.github.com
           cache: pnpm
       - run: pnpm install
       - uses: actions/cache/restore@v3
@@ -65,6 +67,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
+          registry-url: https://npm.pkg.github.com
           cache: pnpm
       - run: pnpm install
       - uses: actions/cache/restore@v3
