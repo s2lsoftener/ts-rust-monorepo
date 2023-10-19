@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "private": true,
   "scripts": {
-    "unit-test": "node --inspect ./node_modules/jest/bin/jest.js --config=./jest.unit.config.js"
+    "unit-test": "node --inspect ./node_modules/jest/bin/jest.js --config=./jest.unit.config.js",
+    "release": "echo release ts-subtract"
   },
   "keywords": [],
   "author": "",

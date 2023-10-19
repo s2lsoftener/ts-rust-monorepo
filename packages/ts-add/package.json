@@ -8,7 +8,7 @@
     "format": "prettier ./src",
     "format-check": "prettier --check ./src",
     "unit-test": "node --inspect ./node_modules/jest/bin/jest.js --config=./jest.unit.config.js",
-    "release": "echo release"
+    "release": "echo release ts-add"
   },
   "keywords": [],
   "author": "",
