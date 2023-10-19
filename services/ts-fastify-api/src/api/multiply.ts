@@ -1,4 +1,4 @@
-import * as tsMath from '@my-org/ts-math'
+import * as tsMath from '@s2lsoftener/ts-math'
 import type { FastifyPluginAsync } from 'fastify'
 
 const multiply: FastifyPluginAsync = async (server) => {

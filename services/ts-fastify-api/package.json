@@ -1,20 +1,25 @@
 {
-  "name": "@my-org/ts-fastify-api",
+  "name": "@s2lsoftener/ts-fastify-api",
   "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
-  "private": true,
   "scripts": {
     "int-test": "tsc --build && node --inspect=0.0.0.0:9230 --require ts-node/register ./node_modules/jest/bin/jest.js --config=./jest.int.config.js",
     "int-test-watch": "./scripts/int-test-watch.sh",
     "docker-int-test": "./scripts/docker-run.sh int-test",
     "docker-int-test-watch": "./scripts/docker-run.sh int-test-watch",
-    "dev": "nodemon -d 1 -L --watch \"./src/**/*\" --watch \"node_modules/@my-org\" -e ts --exec \"node --inspect=0.0.0.0:9229 --require ts-node/register src/index.ts\"",
-    "release": "echo release ts-fastify-api"
+    "dev": "nodemon -d 1 -L --watch \"./src/**/*\" --watch \"node_modules/@s2lsoftener\" -e ts --exec \"node --inspect=0.0.0.0:9229 --require ts-node/register src/index.ts\"",
+    "release": "echo release ts-fastify-api",
+    "postpublish": "echo build image for @s2lsoftener/ts-fastify-api and publish to ECR"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s2lsoftener/ts-rust-monorepo.git",
+    "directory": "services/ts-fastify-api"
+  },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@types/node": "^20.8.3",
@@ -26,7 +31,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@my-org/ts-math": "workspace:^",
+    "@s2lsoftener/ts-math": "workspace:^",
     "fastify": "^4.23.2",
     "fastify-zod": "^1.4.0",
     "zod": "^3.22.4"

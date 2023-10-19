@@ -1,5 +1,5 @@
-export * from '@my-org/ts-add'
-export * from '@my-org/ts-subtract'
+export * from '@s2lsoftener/ts-add'
+export * from '@s2lsoftener/ts-subtract'
 
 export const multiply = (a: number, b: number): number => {
   return a * b

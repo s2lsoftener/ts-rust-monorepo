@@ -1,5 +1,5 @@
 {
-  "name": "@my-org/ts-math",
+  "name": "@s2lsoftener/ts-math",
   "version": "1.0.1",
   "description": "",
   "main": "dist/index.js",
@@ -16,6 +16,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s2lsoftener/ts-rust-monorepo.git",
+    "directory": "packages/ts-math"
+  },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
@@ -28,7 +33,7 @@
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "@my-org/ts-add": "workspace:^",
-    "@my-org/ts-subtract": "workspace:^"
+    "@s2lsoftener/ts-add": "workspace:^",
+    "@s2lsoftener/ts-subtract": "workspace:^"
   }
 }

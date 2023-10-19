@@ -160,4 +160,4 @@ jobs:
             RUST_VERSION=1.71.0
       - run: ./dev/init-env.sh
       - run: |
-          docker compose -f docker-compose.yml -f docker-compose.ci.yml run --rm ${{ matrix.package }} /bin/bash -c "pnpm --filter @my-org/${{ matrix.package }} int-test"
+          docker compose -f docker-compose.yml -f docker-compose.ci.yml run --rm ${{ matrix.package }} /bin/bash -c "pnpm --filter @s2lsoftener/${{ matrix.package }} int-test"

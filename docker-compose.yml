@@ -24,7 +24,7 @@ services:
       dockerfile: ./dev/Dockerfile.node
       args:
         - NODE_VERSION=18.17.0
-    command: pnpm --filter "@my-org/ts-fastify-api" dev
+    command: pnpm --filter "@s2lsoftener/ts-fastify-api" dev
     env_file:
       - ./services/ts-fastify-api/.env
 
@@ -34,7 +34,7 @@ services:
       dockerfile: ./dev/Dockerfile.node
       args:
         - NODE_VERSION=18.17.0
-    command: pnpm --filter "@my-org/ts-random-word-api" dev
+    command: pnpm --filter "@s2lsoftener/ts-random-word-api" dev
     env_file:
       - ./services/ts-random-word-api/.env
 

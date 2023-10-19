@@ -1,5 +1,5 @@
 {
-  "name": "@my-org/ts-subtract",
+  "name": "@s2lsoftener/ts-subtract",
   "version": "1.0.0",
   "description": "",
   "main": "dist/index.js",
@@ -11,6 +11,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s2lsoftener/ts-rust-monorepo.git",
+    "directory": "packages/ts-subtract"
+  },
   "devDependencies": {
     "@jest/globals": "^29.7.0",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
