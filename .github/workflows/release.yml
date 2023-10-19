@@ -39,6 +39,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+  echo:
+    name: Echo
+    needs: publish
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo ${{ needs.publish.outputs.publishedPackages }}
+      - run: echo ${{ needs.publish.outputs.published }}
+
   deploy-develop:
     name: Deploy to Develop
     needs: publish
