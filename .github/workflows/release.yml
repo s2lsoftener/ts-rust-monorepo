@@ -27,3 +27,4 @@ jobs:
         uses: changesets/action@v1
         with:
           publish: pnpm release
+          createGithubReleases: false
