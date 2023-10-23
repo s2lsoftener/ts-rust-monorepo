@@ -29,6 +29,32 @@
       "localRoot": "${workspaceFolder}",
       "remoteRoot": "${workspaceFolder}",
       "restart": true
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "ts-random-word-api: API",
+      "port": 9231,
+      "address": "localhost",
+      "sourceMapPathOverrides": {
+        "${workspaceFolder}/*": "${workspaceFolder}/*"
+      },
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "${workspaceFolder}",
+      "restart": true
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "ts-random-word-api: Tests",
+      "port": 9232,
+      "address": "localhost",
+      "sourceMapPathOverrides": {
+        "${workspaceFolder}/*": "${workspaceFolder}/*"
+      },
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "${workspaceFolder}",
+      "restart": true
     }
   ]
 }

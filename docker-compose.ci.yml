@@ -3,3 +3,11 @@ services:
   ts-fastify-api:
     build: !reset null
     image: s2l-node:latest
+    volumes: !reset []
+    ports: !reset []
+
+  ts-random-word-api:
+    build: !reset null
+    image: s2l-node:latest
+    volumes: !reset []
+    ports: !reset []

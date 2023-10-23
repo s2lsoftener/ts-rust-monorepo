@@ -1,28 +1,15 @@
 {
   "editor.formatOnSave": true,
-  "terminal.integrated.profiles.osx": {
-    "dev": {
-      "path": "zsh",
-      "args": [
-        "-c",
-        "docker compose up -d dev && docker compose exec dev bash"
-      ],
-      "overrideName": true,
-      "color": "terminal.ansiCyan",
-    }
-  },
   "files.associations": {
     "docker-compose.dev.yml": "dockercompose"
   },
   "vsicons.associations.files": [
     {
       "icon": "docker",
-      "extensions": [
-        "docker-compose.dev.yml",
-        "docker-compose.ci.yml"
-      ],
+      "extensions": ["docker-compose.dev.yml", "docker-compose.ci.yml"],
       "filename": true,
       "format": "svg"
     }
-  ]
+  ],
+  "debug.allowBreakpointsEverywhere": true
 }

@@ -1,7 +1,6 @@
 ARG RUST_VERSION="1.71.0"
-FROM rust:${RUST_VERSION} as chef
+FROM lukemathwalker/cargo-chef:latest-rust-${RUST_VERSION} AS chef
 
-RUN cargo install cargo-chef
 RUN cargo install cargo-watch
 WORKDIR /app
 
