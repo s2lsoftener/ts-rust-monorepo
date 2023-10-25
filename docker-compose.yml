@@ -2,6 +2,17 @@
 
 version: "3"
 services:
+  node-dev:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile.node
+      args:
+        - NODE_VERSION=18.17.0
+        - APP_WORKDIR=/app
+      tags:
+        - "s2l-node"
+    tty: true
+
   ts-fastify-api:
     build:
       context: .
