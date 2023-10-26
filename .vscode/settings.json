@@ -6,7 +6,11 @@
   "vsicons.associations.files": [
     {
       "icon": "docker",
-      "extensions": ["docker-compose.dev.yml", "docker-compose.ci.yml"],
+      "extensions": [
+        "docker-compose.dev.yml",
+        "docker-compose.ci.yml",
+        "docker-compose.deploy.yml"
+      ],
       "filename": true,
       "format": "svg"
     }
