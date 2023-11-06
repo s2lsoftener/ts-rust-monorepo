@@ -1,5 +1,11 @@
 # @my-org/ts-random-word-api
 
+## 1.1.0
+
+### Minor Changes
+
+- 930be7f: Add deployment script
+
 ## 1.0.3
 
 ### Patch Changes
