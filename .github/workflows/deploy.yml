@@ -6,6 +6,11 @@ on:
       package_name:
         required: true
         type: string
+  workflow_dispatch:
+    inputs:
+      package_name:
+        required: true
+        type: string
 
 jobs:
   develop:

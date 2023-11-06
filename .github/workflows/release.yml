@@ -69,7 +69,7 @@ jobs:
         env:
           PUBLISHED: ${{ needs.publish.outputs.published }}
           PUBLISHED_PACKAGES: ${{ needs.publish.outputs.publishedPackages }}
-        run: echo "packages=$(node scripts/get-packages-with-images.js '$PUBLISHED_PACKAGES')" >> "$GITHUB_OUTPUT"
+        run: echo "packages=$(node scripts/get-packages-with-images.js $PUBLISHED_PACKAGES)" >> "$GITHUB_OUTPUT"
 
   deploy:
     needs: deployable-images
