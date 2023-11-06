@@ -49,17 +49,35 @@ jobs:
           PUBLISHED_PACKAGES: ${{ needs.publish.outputs.publishedPackages }}
         run: echo $PUBLISHED $PUBLISHED_PACKAGES
 
-  deploy-develop:
-    name: Deploy to Develop
+  deployable-images:
+    name: Get deployable images
     needs: publish
-    if: needs.publish.outputs.published == 'true'
     runs-on: ubuntu-latest
+    outputs:
+      deployable: ${{ steps.deployable-packages.outputs.packages }}
     steps:
-      - run: echo Pretend to publish to develop ${{ needs.publish.outputs.publishedPackages }}
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://npm.pkg.github.com
+      - id: deployable-packages
+        env:
+          PUBLISHED: ${{ needs.publish.outputs.published }}
+          PUBLISHED_PACKAGES: ${{ needs.publish.outputs.publishedPackages }}
+        run: echo "packages=$(node scripts/get-packages-with-images.js '$PUBLISHED_PACKAGES')" >> "$GITHUB_OUTPUT"
 
-  deploy-production:
-    name: Deploy to Production
-    needs: [publish, deploy-develop]
+  deploy:
+    needs: deployable-images
     runs-on: ubuntu-latest
-    steps:
-      - run: echo Pretend to publish to production ${{ needs.publish.outputs.publishedPackages }}
+    strategy:
+      fail-fast: false
+      matrix:
+        package_name: ${{ fromJson(needs.deployable-images.outputs.deployable) }}
+    uses: ./.github/workflows/deploy.yml
+    with:
+      package_name: ${{ matrix.package_name }}
+    secrets: inherit

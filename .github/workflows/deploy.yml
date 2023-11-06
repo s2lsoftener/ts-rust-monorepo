@@ -1,0 +1,45 @@
+name: Deploy
+
+on:
+  workflow_call:
+    inputs:
+      package_name:
+        required: true
+        type: string
+
+jobs:
+  develop:
+    name: Deploy to Develop - ${{ inputs.package_name }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://npm.pkg.github.com
+          cache: pnpm
+      - run: echo 'run deploy-image command'
+      - env:
+          NODE_ENV: development
+        run: pnpm --filter ${{ inputs.package_name }} run build-image $NODE_ENV
+  production:
+    name: Deploy to Production - ${{ inputs.package_name }}
+    runs-on: ubuntu-latest
+    environment: production
+    steps:
+      - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://npm.pkg.github.com
+          cache: pnpm
+      - run: echo 'run deploy-image command'
+      - env:
+          NODE_ENV: development
+        run: pnpm --filter ${{ inputs.package_name }} run build-image $NODE_ENV

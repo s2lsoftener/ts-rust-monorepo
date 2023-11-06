@@ -43,7 +43,7 @@ services:
       - .:/${PWD}
       - node_modules:/${PWD}/node_modules
     ports:
-      - 33000:3000 # api
+      - 33002:3000 # api
       - 9231:9229 # api debug
       - 9232:9230 # test debug
 
