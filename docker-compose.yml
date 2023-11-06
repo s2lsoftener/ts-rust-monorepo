@@ -1,7 +1,16 @@
-# Make sure to check the docker-compose.override.yml to see which options are automatically merged in development
-
 version: "3"
 services:
+  node-dev:
+    build:
+      context: .
+      dockerfile: ./dev/Dockerfile.node
+      args:
+        - NODE_VERSION=18.17.0
+        - APP_WORKDIR=/app
+      tags:
+        - "s2l-node"
+    tty: true
+
   ts-fastify-api:
     build:
       context: .
@@ -34,7 +43,7 @@ services:
       - .:/${PWD}
       - node_modules:/${PWD}/node_modules
     ports:
-      - 33000:3000 # api
+      - 33002:3000 # api
       - 9231:9229 # api debug
       - 9232:9230 # test debug
 

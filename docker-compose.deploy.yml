@@ -1,0 +1,23 @@
+version: "3"
+services:
+  ts-fastify-api:
+    build:
+      context: .
+      dockerfile: ./services/ts-fastify-api/Dockerfile
+      args:
+        - NODE_VERSION=18.17.0
+        - WORKDIR=/app
+      tags:
+        - ts-fastify-api-${SHORT_GIT_HASH}
+        - ts-fastify-api-${ENVIRONMENT}
+
+  ts-random-word-api:
+    build:
+      context: .
+      dockerfile: ./services/ts-random-word-api/Dockerfile
+      args:
+        - NODE_VERSION=18.17.0
+        - WORKDIR=/app
+      tags:
+        - ts-random-word-api-${SHORT_GIT_HASH}
+        - ts-random-word-api-${ENVIRONMENT}
