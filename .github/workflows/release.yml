@@ -52,6 +52,7 @@ jobs:
   deployable-images:
     name: Get deployable images
     needs: publish
+    if: needs.publish.outputs.published == 'true'
     runs-on: ubuntu-latest
     outputs:
       deployable: ${{ steps.deployable-packages.outputs.packages }}
