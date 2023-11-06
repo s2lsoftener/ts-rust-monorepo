@@ -1,5 +1,12 @@
 # @my-org/ts-math
 
+## 1.0.4
+
+### Patch Changes
+
+- Updated dependencies [786b9b3]
+  - @s2lsoftener/ts-add@3.1.0
+
 ## 1.0.3
 
 ### Patch Changes

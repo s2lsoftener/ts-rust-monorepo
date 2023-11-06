@@ -1,5 +1,11 @@
 # @my-org/ts-add
 
+## 3.1.0
+
+### Minor Changes
+
+- 786b9b3: dummy bump nov5
+
 ## 3.0.0
 
 ### Major Changes

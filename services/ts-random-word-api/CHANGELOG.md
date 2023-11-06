@@ -1,5 +1,15 @@
 # @my-org/ts-random-word-api
 
+## 1.2.0
+
+### Minor Changes
+
+- 786b9b3: dummy bump nov5
+
+### Patch Changes
+
+- @s2lsoftener/ts-math@1.0.4
+
 ## 1.1.0
 
 ### Minor Changes
